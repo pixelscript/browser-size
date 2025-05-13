@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Browser Size</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    #dimensions {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <article id="dimensions">
+    <header>
+      <h1>Browser Size 💻</h1>
+    </header>
+    <main>
+      <fieldset title="Inner Size">
+        <p>↔ Inner Width: <span id="innerWidth"></span>px</p>
+        <p>↕ Inner Height: <span id="innerHeight"></span>px</p>
+      </fieldset>
+      <fieldset title="Outer Size">
+        <p>↔ Outer Width: <span id="outerWidth"></span>px</p>
+        <p>↕ Outer Height: <span id="outerHeight"></span>px</p>
+      </fieldset>
+      <fieldset title="Screen Size">
+        <p>↔ Screen Width: <span id="width"></span>px</p>
+        <p>↕ Screen Height: <span id="height"></span>px</p>
+      </fieldset>
+      <p>Device Pixel Ratio: <span id="pixelRatio"></span></p>
+    </main>
+
+  </article>
+
+  <script>
+    const widthEl = document.getElementById('width');
+    const heightEl = document.getElementById('height');
+    const innerWidthEl = document.getElementById('innerWidth');
+    const innerHeightEl = document.getElementById('innerHeight');
+    const outerWidthEl = document.getElementById('outerWidth');
+    const outerHeightEl = document.getElementById('outerHeight');
+
+    function updateDimensions() {
+      pixelRatio.textContent = window.devicePixelRatio;
+      widthEl.textContent = window.screen.width;
+      heightEl.textContent = window.screen.height;
+      innerWidthEl.textContent = window.innerWidth;
+      innerHeightEl.textContent = window.innerHeight;
+      outerWidthEl.textContent = window.outerWidth;
+      outerHeightEl.textContent = window.outerHeight;
+    }
+
+    window.addEventListener('resize', updateDimensions);
+    document.addEventListener('DOMContentLoaded', updateDimensions);
+  </script>
+</body>
+
+</html>
