@@ -1,5 +1,7 @@
 # Browser Size 💻
 
+![Image of App](./bs.png)
+
 This project is a simple web application that displays various browser and screen dimension properties. Useful for debugging iframes.
 
 ## Features
