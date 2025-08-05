@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Browser Size</title>
+  <script src="https://unpkg.com/dc-extensions-sdk@^2"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
   <style>
     body {
@@ -45,6 +46,7 @@
   </article>
 
   <script>
+    window.dcExtensionsSdk.init();
     const widthEl = document.getElementById('width');
     const heightEl = document.getElementById('height');
     const innerWidthEl = document.getElementById('innerWidth');
